@@ -1,15 +1,17 @@
 const container = document.getElementById("container");
-const boxHeight = "25px";
-const boxWidth = "25px";
 
+const boxSide = 30
+const maxBoxes = boxSide * boxSide
+function boxResize(num) {
+    return (500 / num);
+}
+const boxSize = boxResize(boxSide);
 
-const maxBoxes = 64
-
-for (let i = 1; i < maxBoxes; i++) {
+for (let i = 0; i < maxBoxes; i++) {
     const box = document.createElement("div")
     box.style.backgroundColor = "blue";
-    box.style.height = boxHeight;
-    box.style.width = boxWidth;
+    box.style.height = boxSize + "px";
+    box.style.width = boxSize + "px";
     container.appendChild(box)
 }
 
